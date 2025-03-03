@@ -67,7 +67,7 @@ describe("CreatePlayer", () => {
 
         it("should return PLAYER_CREATED for valid names", () => {
             const result = CreatePlayer.validateName("ValidName")
-            expect(result).toEqual({ code: "PLAYER_CREATED" })
+            expect(result).toEqual({ code: "NAME_VALID" })
         })
     })
 

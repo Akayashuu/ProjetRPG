@@ -28,8 +28,8 @@ class CreatePlayer {
 
     static createPlayer(name: string, characterType: CharacterClass): CreatePlayerResponse {
         const nameValidation = CreatePlayer.validateName(name)
-        if (nameValidation.code !== "PLAYER_CREATED") {
-            return nameValidation
+        if (nameValidation.code !== "NAME_VALID") {
+            return nameValidation as CreatePlayerResponse
         }
 
         const profanityFilter = CreatePlayer.profanityFilter(name)
@@ -45,12 +45,12 @@ class CreatePlayer {
         return { code: "PLAYER_CREATED" }
     }
 
-    static validateName(name: string): CreatePlayerResponse {
+    static validateName(name: string): NameValidationResponse {
         if (name.length < 3) return { code: "NAME_TOO_SHORT" }
         if (name.length > 20) return { code: "NAME_TOO_LONG" }
         if (!/^[a-zA-Z0-9]+$/.test(name)) return { code: "NAME_INVALID" }
 
-        return { code: "PLAYER_CREATED" }
+        return { code: "NAME_VALID" }
     }
 
     static profanityFilter(name: string): ProfanityFilterResponse {
