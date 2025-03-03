@@ -1,0 +1,31 @@
+{
+    "name": "projetrpg",
+    "version": "1.0.0",
+    "description": "Les joueurs explorent un donjon généré aléatoirement, affrontent des monstres, et collectent des trésors tout en améliorant leurs compétences. Tout se fait via des commandes textuelles, et chaque tour de jeu permet au joueur de prendre des décisions simples : se déplacer, combattre, ramasser des objets, etc.",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "tsc --watch > /dev/null 2>&1 & pm2 start ecosystem.config.js --watch --log && pm2 logs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Akayashuu/ProjetRPG.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Akayashuu/ProjetRPG/issues"
+    },
+    "homepage": "https://github.com/Akayashuu/ProjetRPG#readme",
+    "dependencies": {
+        "eslint": "^9.21.0",
+        "lint-staged": "^15.4.3",
+        "pm2": "^5.4.3",
+        "prettier": "^3.5.3",
+        "readline": "^1.3.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.9.4",
+        "@types/node": "^22.13.8"
+    }
+}

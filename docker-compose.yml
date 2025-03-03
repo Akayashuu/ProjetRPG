@@ -1,0 +1,9 @@
+services:
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: core
+    restart: always
+    volumes:
+      - .:/app  # Root directory mapped to /app in the container
