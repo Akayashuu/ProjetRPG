@@ -49,6 +49,28 @@ describe("CreatePlayer", () => {
         })
     })
 
+    describe("validateName", () => {
+        it("should return NAME_TOO_SHORT when name is less than 3 characters", () => {
+            const result = CreatePlayer.validateName("ab")
+            expect(result).toEqual({ code: "NAME_TOO_SHORT" })
+        })
+
+        it("should return NAME_TOO_LONG when name is more than 20 characters", () => {
+            const result = CreatePlayer.validateName("abcdefghijklmnopqrstuvwxyz")
+            expect(result).toEqual({ code: "NAME_TOO_LONG" })
+        })
+
+        it("should return NAME_INVALID when name contains invalid characters", () => {
+            const result = CreatePlayer.validateName("player-123")
+            expect(result).toEqual({ code: "NAME_INVALID" })
+        })
+
+        it("should return PLAYER_CREATED for valid names", () => {
+            const result = CreatePlayer.validateName("ValidName")
+            expect(result).toEqual({ code: "PLAYER_CREATED" })
+        })
+    })
+
     describe("profanityFilter", () => {
         it('should detect profanity "cable"', () => {
             const result = CreatePlayer.profanityFilter("cable123")
@@ -79,17 +101,17 @@ describe("CreatePlayer", () => {
     describe("validateCharacterClass", () => {
         it("should validate WARRIOR character class", () => {
             const result = CreatePlayer.validateCharacterClass(CharacterClass.WARRIOR)
-            expect(result).toEqual({ code: "PLAYER_CREATED" })
+            expect(result).toEqual({ code: "CHARACTER_CLASS_VALID" })
         })
 
         it("should validate MAGE character class", () => {
             const result = CreatePlayer.validateCharacterClass(CharacterClass.MAGE)
-            expect(result).toEqual({ code: "PLAYER_CREATED" })
+            expect(result).toEqual({ code: "CHARACTER_CLASS_VALID" })
         })
 
         it("should validate ROGUE character class", () => {
             const result = CreatePlayer.validateCharacterClass(CharacterClass.ROGUE)
-            expect(result).toEqual({ code: "PLAYER_CREATED" })
+            expect(result).toEqual({ code: "CHARACTER_CLASS_VALID" })
         })
 
         it("should return CHARACTER_CLASS_INVALID for invalid character classes", () => {
