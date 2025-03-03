@@ -1,6 +1,6 @@
 import * as readline from "readline"
 
-class GameClient {
+class Readline {
     private rl: readline.Interface
 
     constructor() {
@@ -33,5 +33,5 @@ class GameClient {
 }
 
 // Start the game client
-const client = new GameClient()
+const client = new Readline()
 client.start()

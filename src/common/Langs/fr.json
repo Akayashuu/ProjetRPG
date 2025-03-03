@@ -1,0 +1,58 @@
+{
+    "stats": {
+        "hp": {
+            "name": "Points de Vie (PV)",
+            "desc": "Représentent la santé du personnage."
+        },
+        "mp": {
+            "name": "Points de Mana (PM)",
+            "desc": "Utilisés pour les sorts et compétences spéciales."
+        },
+        "strength": {
+            "name": "Force",
+            "desc": "Augmente les dégâts des attaques physiques."
+        },
+        "intelligence": {
+            "name": "Intelligence",
+            "desc": "Améliore l'efficacité des sorts magiques."
+        },
+        "defense": {
+            "name": "Défense",
+            "desc": "Réduit les dégâts physiques reçus."
+        },
+        "magicResistance": {
+            "name": "Résistance Magique",
+            "desc": "Réduit les dégâts magiques reçus."
+        },
+        "agility": {
+            "name": "Agilité",
+            "desc": "Améliore la vitesse d'action et la capacité d'esquive."
+        },
+        "luck": {
+            "name": "Chance",
+            "desc": "Augmente les chances de coups critiques et de trouvailles rares."
+        },
+        "endurance": {
+            "name": "Endurance",
+            "desc": "Améliore la résistance aux effets négatifs."
+        },
+        "spirit": {
+            "name": "Esprit",
+            "desc": "Augmente la régénération de mana et la résistance mentale."
+        }
+    },
+    "classes": {
+        "warrior": {
+            "name": "Guerrier",
+            "desc": "Spécialiste du combat rapproché avec une grande force et défense."
+        },
+        "mage": {
+            "name": "Mage",
+            "desc": "Maître des arts magiques avec une intelligence et résistance magique élevées."
+        },
+        "thief": {
+            "name": "Voleur",
+            "desc": "Expert en agilité et chance, idéal pour les attaques furtives."
+        }
+    }
+}
