@@ -5,7 +5,16 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "dev": "tsc --watch > /dev/null 2>&1 & pm2 start ecosystem.config.js --watch --log && pm2 logs"
+        "dev": "tsc --watch > /dev/null 2>&1 & pm2 start ecosystem.config.js --watch --log && pm2 logs",
+        "test": "vitest",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "precommit": "lint-staged",
+        "start": "pm2 start ecosystem.config.js --watch --log",
+        "stop": "pm2 stop ecosystem.config.js",
+        "restart": "pm2 restart ecosystem.config.js"
     },
     "repository": {
         "type": "git",
@@ -28,6 +37,7 @@
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
-        "@types/node": "^22.13.8"
+        "@types/node": "^22.13.8",
+        "vitest": "^3.0.7"
     }
 }

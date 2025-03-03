@@ -1,8 +1,8 @@
 import { CharacterClass, ClassAbstract } from "./ClassAbstract"
 
 class Rogue extends ClassAbstract {
-    type = CharacterClass.ROGUE
-    stats = {
+    characterType = CharacterClass.ROGUE
+    characterStats = {
         healthPoints: 110,
         manaPoints: 70,
         strength: 10,

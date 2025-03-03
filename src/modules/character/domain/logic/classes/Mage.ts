@@ -1,8 +1,8 @@
 import { CharacterClass, ClassAbstract } from "./ClassAbstract"
 
 class Mage extends ClassAbstract {
-    type = CharacterClass.MAGE
-    stats = {
+    characterType = CharacterClass.MAGE
+    characterStats = {
         healthPoints: 90,
         manaPoints: 150,
         strength: 4,
