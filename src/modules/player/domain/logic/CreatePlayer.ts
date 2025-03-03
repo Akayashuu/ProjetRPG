@@ -37,8 +37,9 @@ class CreatePlayer {
     }
 
     static profanityFilter(name: string): ProfanityFilterResponse {
-        const profanities = ["cable", "cables", "cabless", "cablesss"]
+        const profanities = ["cable", "test", "prof", "user"]
         const profanity = profanities.find((p) => name.includes(p))
+        console.log(profanity)
         if (profanity) return { code: "PROFANITY_DETECTED", profanity }
 
         return { code: "NO_PROFANITY_DETECTED" }

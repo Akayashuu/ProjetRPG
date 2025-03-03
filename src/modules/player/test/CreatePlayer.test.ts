@@ -24,7 +24,7 @@ describe("CreatePlayer", () => {
 
         it("should return PROFANITY_DETECTED when name contains profanity", () => {
             const result = CreatePlayer.createPlayer("cabless", CharacterClass.WARRIOR)
-            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cabless" })
+            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cable" })
         })
 
         it("should return CHARACTER_CLASS_INVALID when character class is invalid", () => {
@@ -55,19 +55,19 @@ describe("CreatePlayer", () => {
             expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cable" })
         })
 
-        it('should detect profanity "cables"', () => {
-            const result = CreatePlayer.profanityFilter("123cables")
-            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cables" })
+        it('should detect profanity "test"', () => {
+            const result = CreatePlayer.profanityFilter("123test")
+            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "test" })
         })
 
-        it('should detect profanity "cabless"', () => {
-            const result = CreatePlayer.profanityFilter("cabless")
-            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cabless" })
+        it('should detect profanity "prof"', () => {
+            const result = CreatePlayer.profanityFilter("prof")
+            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "prof" })
         })
 
-        it('should detect profanity "cablesss"', () => {
-            const result = CreatePlayer.profanityFilter("cablesss")
-            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "cablesss" })
+        it('should detect profanity "user"', () => {
+            const result = CreatePlayer.profanityFilter("username")
+            expect(result).toEqual({ code: "PROFANITY_DETECTED", profanity: "user" })
         })
 
         it("should return NO_PROFANITY_DETECTED for clean names", () => {
