@@ -7,3 +7,19 @@ services:
     restart: always
     volumes:
       - .:/app  # Root directory mapped to /app in the container
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: rpg
+      POSTGRES_PASSWORD: rpg
+      POSTGRES_DB: rpg
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

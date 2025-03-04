@@ -6,13 +6,13 @@ Un jeu RPG textuel où les joueurs explorent un donjon aléatoire, combattent de
 ## Fonctionnalités principales
 
 ### 1. Création du personnage
-- Choix du nom et de la classe (guerrier, mage, voleur)
-- Statistiques de base selon la classe choisie
+- ✅ Choix du nom et de la classe (guerrier, mage, voleur)
+- ✅ Statistiques de base selon la classe choisie
 - Inventaire initial vide
 
 **Tests**:
-- Validation de la création de personnage
-- Vérification des contraintes sur le nom
+- ✅ Validation de la création de personnage
+- ✅ Vérification des contraintes sur le nom
 
 ### 2. Exploration du donjon
 - Déplacement entre salles interconnectées (nord, sud, est, ouest)
@@ -47,4 +47,4 @@ Un jeu RPG textuel où les joueurs explorent un donjon aléatoire, combattent de
 ## Persistance des données
 - Sauvegarde de l'état de la partie
 - Chargement possible après redémarrage
-- Méthode de stockage au choix (hors mémoire)
+- ✅ Méthode de stockage au choix (hors mémoire)
