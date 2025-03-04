@@ -54,5 +54,15 @@
             "name": "Voleur",
             "desc": "Expert en agilité et chance, idéal pour les attaques furtives."
         }
+    },
+    "commands": {
+        "menu": {
+            "description": "Ouvre le menu principal.",
+            "start": "Démarrer l'aventure",
+            "help": "Voir les commandes",
+            "exit": "Quitter le jeu",
+            "exit_message": "Merci d'avoir joué à notre jeu ! À bientôt !",
+            "title": "Menu Principal"
+        }
     }
 }

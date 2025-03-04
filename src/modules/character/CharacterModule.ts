@@ -1,5 +1,9 @@
-import BaseModule from "../../BaseModule"
+import BaseModule from "../../BaseModule.js"
 
-class CharacterModule extends BaseModule {}
+class CharacterModule extends BaseModule {
+    registerCommands() {
+        return []
+    }
+}
 
 export default CharacterModule

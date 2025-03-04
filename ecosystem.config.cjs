@@ -18,7 +18,7 @@ module.exports = {
             env_production: {
                 NODE_ENV: "production",
             },
-            ignore_watch: ["node_modules", "logs", ".git"],
+            ignore_watch: ["node_modules", "logs", ".git", "src/generated"],
             watch_options: {
                 followSymlinks: false,
                 usePolling: true,

@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "dev": "tsc --watch > /dev/null 2>&1 & pm2 start ecosystem.config.js --watch --log && pm2 logs",
+        "dev": "tsc --watch > /dev/null 2>&1 & pm2 start ecosystem.config.cjs --watch --log && pm2 logs",
         "test": "vitest",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
@@ -27,9 +27,13 @@
     },
     "homepage": "https://github.com/Akayashuu/ProjetRPG#readme",
     "dependencies": {
+        "@types/lodash-es": "^4.17.12",
+        "colors": "^1.4.0",
         "eslint": "^9.21.0",
         "eslint-config-prettier": "^10.0.2",
         "lint-staged": "^15.4.3",
+        "lodash": "^4.17.21",
+        "lodash-es": "^4.17.21",
         "pm2": "^5.4.3",
         "prettier": "^3.5.3",
         "readline": "^1.3.0",

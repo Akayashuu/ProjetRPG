@@ -1,5 +1,9 @@
-import BaseModule from "../../BaseModule"
+import BaseModule from "../../BaseModule.js"
 
-class PlayerModule extends BaseModule {}
+class PlayerModule extends BaseModule {
+    registerCommands() {
+        return []
+    }
+}
 
 export default PlayerModule
