@@ -35,17 +35,17 @@ class MenuCommand extends BaseCommand {
 
     execute(ctx: CommandContext): void {
         const options = {
-            [colors.green(ctx.$$("commands.menu.start"))]: {
+            [colors.green.bold(ctx.$$("commands.menu.start"))]: {
                 callback() {
                     console.log(colors.green("Démarrage de l'aventure..."))
                 },
             },
-            [colors.blue(ctx.$$("commands.menu.help"))]: {
+            [colors.blue.bold(ctx.$$("commands.menu.help"))]: {
                 callback() {
                     // TODO: Redirect to HelpCommand
                 },
             },
-            [colors.red(ctx.$$("commands.menu.exit"))]: {
+            [colors.red.bold(ctx.$$("commands.menu.exit"))]: {
                 callback() {
                     console.log(colors.red(ctx.$$("commands.menu.exit_message")))
                     ctx.stop()
@@ -119,28 +119,30 @@ class MenuCommand extends BaseCommand {
         )
         const horizontalPadding = Math.floor((terminalWidth - maxContentWidth) / 2)
 
-        let title = colors.yellow(`╔${"═".repeat(terminalWidth - 2)}╗\n`)
+        let title = colors.yellow.bold(`╔${"═".repeat(terminalWidth - 2)}╗\n`)
 
         const topPadding = Math.max(
             0,
             Math.floor((terminalHeight - gameNameLines.length - dragonArtLines.length - 4) / 4),
         )
         for (let i = 0; i < topPadding; i++) {
-            title += colors.yellow(`║${" ".repeat(terminalWidth - 2)}║\n`)
+            title += colors.yellow.bold(`║${" ".repeat(terminalWidth - 2)}║\n`)
         }
 
         for (const line of gameNameLines) {
             const paddedLine = line
                 .padStart(line.length + horizontalPadding)
                 .padEnd(terminalWidth - 2)
-            title += colors.yellow("║") + colors.yellow(paddedLine) + colors.yellow("║\n")
+            title +=
+                colors.yellow.bold("║") + colors.yellow.bold(paddedLine) + colors.yellow.bold("║\n")
         }
 
         for (const line of dragonArtLines) {
             const paddedLine = line
                 .padStart(line.length + horizontalPadding)
                 .padEnd(terminalWidth - 2)
-            title += colors.yellow("║") + colors.red(paddedLine) + colors.yellow("║\n")
+            title +=
+                colors.yellow.bold("║") + colors.red.bold(paddedLine) + colors.yellow.bold("║\n")
         }
 
         const horizontalPaddingOptions = Math.floor((terminalWidth - 2) / 2)
@@ -148,13 +150,14 @@ class MenuCommand extends BaseCommand {
         let i = 0
         for (const [option, _] of Object.entries(options)) {
             const isCurrent = index === i
+            const a = isCurrent ? 15 : 17
             const paddedOption = option
                 .padStart(option.length + horizontalPaddingOptions)
-                .padEnd(terminalWidth + 8)
+                .padEnd(terminalWidth + a)
             title +=
-                colors.yellow("║") +
-                (isCurrent ? colors.bgWhite.black(paddedOption) : colors.white(paddedOption)) +
-                colors.yellow("║\n")
+                colors.yellow.bold("║") +
+                paddedOption.replace(option, isCurrent ? `► ${option}` : option) +
+                colors.yellow.bold("║\n")
             i++
         }
 
@@ -163,10 +166,10 @@ class MenuCommand extends BaseCommand {
             terminalHeight - gameNameLines.length - dragonArtLines.length - topPadding - 4,
         )
         for (let i = 0; i < bottomPadding; i++) {
-            title += colors.yellow(`║${" ".repeat(terminalWidth - 2)}║\n`)
+            title += colors.yellow.bold(`║${" ".repeat(terminalWidth - 2)}║\n`)
         }
 
-        title += colors.yellow(`╚${"═".repeat(terminalWidth - 2)}╝`)
+        title += colors.yellow.bold(`╚${"═".repeat(terminalWidth - 2)}╝`)
 
         return title
     }
