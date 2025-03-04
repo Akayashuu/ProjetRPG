@@ -12,3 +12,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+enum CharacterClass {
+  WARRIOR
+  MAGE
+  ROGUE
+}
+
+model Player {
+  id       String   @id @default(cuid())
+  name      String
+  class    CharacterClass
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

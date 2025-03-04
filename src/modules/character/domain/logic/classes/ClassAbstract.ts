@@ -1,7 +1,7 @@
 enum CharacterClass {
-    WARRIOR = 0,
-    MAGE = 1,
-    ROGUE = 2,
+    WARRIOR = "WARRIOR",
+    MAGE = "MAGE",
+    ROGUE = "ROGUE",
 }
 
 interface CharacterStats {
