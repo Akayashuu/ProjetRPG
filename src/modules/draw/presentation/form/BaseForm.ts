@@ -2,8 +2,8 @@ import { Colors } from "../interfaces/Colors.js"
 import { asciiSymbolMap, type MatriceColor, type Matrice, type Point } from "../interfaces/Form.js"
 
 abstract class BaseForm {
-    abstract matrices: Matrice
-    abstract matricesColor: MatriceColor
+    public matrices: Matrice = []
+    public matricesColor: MatriceColor = []
     public constructor(
         public width: number,
         public height: number,

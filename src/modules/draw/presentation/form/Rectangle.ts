@@ -1,12 +1,8 @@
 import type { Colors } from "../interfaces/Colors.js"
 import type Form from "../interfaces/Form.js"
-import type { Matrice, MatriceColor } from "../interfaces/Form.js"
 import BaseForm from "./BaseForm.js"
 
 class Rectangle extends BaseForm implements Form {
-    public matrices!: Matrice
-    public matricesColor!: MatriceColor
-
     area(): number {
         return this.width * this.height
     }
