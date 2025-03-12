@@ -1,6 +1,7 @@
 import colors from "colors"
 import BaseCommand from "../../../BaseCommand.js"
 import type CommandContext from "../../../common/context/CommandContext"
+import CreatePlayerCommand from "../../player/presentation/commands/CreatePlayer.js"
 class MenuCommand extends BaseCommand {
     public name = "menu"
     public subCommands = new Map<string, BaseCommand>()
@@ -38,6 +39,8 @@ class MenuCommand extends BaseCommand {
             [colors.green.bold(ctx.$$("commands.menu.start"))]: {
                 callback() {
                     console.log(colors.green("Démarrage de l'aventure..."))
+                    process.stdin.removeListener("keypress", keypressHandler)
+                    new CreatePlayerCommand().execute(ctx)
                 },
             },
             [colors.blue.bold(ctx.$$("commands.menu.help"))]: {

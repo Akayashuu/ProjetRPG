@@ -19,14 +19,6 @@ interface CharacterStats {
 abstract class ClassAbstract {
     abstract characterType: CharacterClass
     abstract characterStats: CharacterStats
-
-    get type(): CharacterClass {
-        return this.characterType
-    }
-
-    get stats(): CharacterStats {
-        return this.characterStats
-    }
 }
 
 export { CharacterClass, type CharacterStats, ClassAbstract }

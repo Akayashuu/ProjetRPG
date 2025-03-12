@@ -21,6 +21,13 @@ class CommandContext {
         this.rl.question(question, callback)
     }
 
+    public getTerminalSize() {
+        return {
+            height: process.stdout.columns || 80,
+            width: process.stdout.rows / 2 || 24,
+        }
+    }
+
     public displaySelectionPrompt(
         question: string,
         options: {
