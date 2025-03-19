@@ -9,6 +9,8 @@ abstract class BaseForm {
         public height: number,
         public gridCoordinates: Point | null,
     ) {
+        this.width = Math.floor(width)
+        this.height = Math.floor(height)
         this.fill()
     }
 

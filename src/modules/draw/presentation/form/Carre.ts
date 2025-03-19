@@ -1,14 +1,19 @@
 import type { Colors } from "../interfaces/Colors.js"
 import type Form from "../interfaces/Form.js"
+import type { Point } from "../interfaces/Form.js"
 import BaseForm from "./BaseForm.js"
 
-class Rectangle extends BaseForm implements Form {
+class Carre extends BaseForm implements Form {
+    constructor(size: number, gridCoordinates: Point | null) {
+        super(size, size * 2, gridCoordinates)
+    }
+
     area(): number {
         return this.width * this.height
     }
 
     perimeter(): number {
-        return 2 * (this.width + this.height)
+        return 4 * this.width
     }
 
     move(x: number, y: number): void {
@@ -33,16 +38,16 @@ class Rectangle extends BaseForm implements Form {
         this.height *= factor
     }
 
-    clone(): Rectangle {
-        return new Rectangle(this.width, this.height, this.gridCoordinates)
+    clone(): Carre {
+        return new Carre(this.width, this.gridCoordinates)
     }
 
-    deepEquals(other: Rectangle): boolean {
+    deepEquals(other: Carre): boolean {
         return this.width === other.width && this.height === other.height
     }
 
     toString(): string {
-        return `Rectangle(${this.width}, ${this.height})`
+        return `Carre(${this.width})`
     }
 
     public setBorder(color: Colors): void {
@@ -69,4 +74,4 @@ class Rectangle extends BaseForm implements Form {
     }
 }
 
-export default Rectangle
+export default Carre

@@ -22,10 +22,12 @@ interface Form {
     gridCoordinates: Point | null
     matrices: Matrice
     matricesColor: MatriceColor
+    width: number
+    height: number
     area(): number
     perimeter(): number
     move(x: number, y: number): void
-    draw(): void
+    draw(): string[][]
     scale(factor: number): void
     clone(): FormType
     deepEquals(other: FormType): boolean
