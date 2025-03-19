@@ -1,8 +1,9 @@
 import BaseCommand from "../../../../BaseCommand.js"
 import type CommandContext from "../../../../common/context/CommandContext.js"
-import Carre from "../../../draw/presentation/form/Carre.js"
+import Warrior from "../../../character/domain/logic/classes/Warrior.js"
 import Line from "../../../draw/presentation/form/Line.js"
 import Rectangle from "../../../draw/presentation/form/Rectangle.js"
+import StringForm from "../../../draw/presentation/form/StringForm.js"
 import Grid from "../../../draw/presentation/Grid.js"
 import { Colors } from "../../../draw/presentation/interfaces/Colors.js"
 class CreatePlayerCommand extends BaseCommand {
@@ -19,10 +20,9 @@ class CreatePlayerCommand extends BaseCommand {
         Rec.setBorder(Colors.Yellow)
         grid.addForm(Rec)
 
-        const separatorPersonnageCard = new Line(38, { x: 18, y: 6 })
+        const separatorPersonnageCard = new Line(38, { x: 20, y: 6 })
         separatorPersonnageCard.setBorder(Colors.Yellow)
         grid.addForm(separatorPersonnageCard)
-        grid.draw()
     }
 }
 

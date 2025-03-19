@@ -19,6 +19,7 @@ interface CharacterStats {
 abstract class ClassAbstract {
     abstract characterType: CharacterClass
     abstract characterStats: CharacterStats
+    abstract ascii: string
 }
 
 export { CharacterClass, type CharacterStats, ClassAbstract }

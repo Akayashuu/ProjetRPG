@@ -1,4 +1,4 @@
-import { CharacterClass, ClassAbstract } from "./ClassAbstract"
+import { CharacterClass, ClassAbstract } from "./ClassAbstract.js"
 
 class Warrior extends ClassAbstract {
     characterType = CharacterClass.WARRIOR
@@ -14,6 +14,22 @@ class Warrior extends ClassAbstract {
         endurance: 10,
         spirit: 4,
     }
+    ascii = `
+      __      _
+     /__\\__  //
+    //_____\\///
+   _| /-_-\\)|/_
+  (___\\ _ //___\\
+  (  |\\_/// *  \\
+   \\_| \\_((*   *))
+   ( |__|_\\    *//
+   (o/  _  \\_*_/
+   //\\__|__/\\
+  // |  | |  |
+ //  _\\ | |___)
+//  (___|
+    
+    `
 }
 
 export default Warrior
