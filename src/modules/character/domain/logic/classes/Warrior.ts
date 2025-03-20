@@ -1,7 +1,7 @@
-import { CharacterClass, ClassAbstract } from "./ClassAbstract.js"
+import { ClassAbstract } from "./ClassAbstract.js"
 
 class Warrior extends ClassAbstract {
-    characterType = CharacterClass.WARRIOR
+    characterType = "WARRIOR"
     characterStats = {
         healthPoints: 150,
         manaPoints: 50,

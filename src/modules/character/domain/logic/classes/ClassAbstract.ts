@@ -1,9 +1,3 @@
-enum CharacterClass {
-    WARRIOR = "WARRIOR",
-    MAGE = "MAGE",
-    ROGUE = "ROGUE",
-}
-
 interface CharacterStats {
     healthPoints: number
     manaPoints: number
@@ -17,9 +11,9 @@ interface CharacterStats {
     spirit: number
 }
 abstract class ClassAbstract {
-    abstract characterType: CharacterClass
+    abstract characterType: string
     abstract characterStats: CharacterStats
     abstract ascii: string
 }
 
-export { CharacterClass, type CharacterStats, ClassAbstract }
+export { type CharacterStats, ClassAbstract }

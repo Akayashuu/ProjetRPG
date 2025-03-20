@@ -1,9 +1,8 @@
-import type { Prisma } from "@prisma/client"
+import type { CharacterClass, Prisma } from "@prisma/client"
 import PlayerEntity from "../domain/entities/PlayerEntity"
 import GlobalPrismaClient, {
     type PrismaClientOrTransaction,
 } from "../../../common/database/GlobalPrismaClient"
-import type { CharacterClass } from "../../character/domain/logic/classes/ClassAbstract"
 
 class PlayerRepository {
     private constructor(private client: PrismaClientOrTransaction = GlobalPrismaClient) {}
