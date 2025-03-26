@@ -63,7 +63,6 @@ class CommandContext {
                 }
                 return
             }
-            console.log(str, key)
             switch (key.name) {
                 case "up":
                     currentIndex = currentIndex === 0 ? entries.length - 1 : currentIndex - 1
