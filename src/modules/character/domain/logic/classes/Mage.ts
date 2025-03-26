@@ -1,7 +1,7 @@
 import { ClassAbstract } from "./ClassAbstract"
 
 class Mage extends ClassAbstract {
-    characterType = "MAGE"
+    static characterType = "MAGE"
     characterStats = {
         healthPoints: 90,
         manaPoints: 150,

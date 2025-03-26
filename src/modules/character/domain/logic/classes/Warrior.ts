@@ -1,7 +1,7 @@
 import { ClassAbstract } from "./ClassAbstract.js"
 
 class Warrior extends ClassAbstract {
-    characterType = "WARRIOR"
+    static characterType = "WARRIOR"
     characterStats = {
         healthPoints: 150,
         manaPoints: 50,

@@ -11,7 +11,7 @@ interface CharacterStats {
     spirit: number
 }
 abstract class ClassAbstract {
-    abstract characterType: string
+    static characterType: string
     abstract characterStats: CharacterStats
     abstract ascii: string
 }
