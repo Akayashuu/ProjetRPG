@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest"
-import Mage from "../../common/Mage"
-import CharacterMovement from "./domain/logic/movements/CharacterMovements"
-import Directions from "./domain/logic/movements/Direction"
+import Mage from "../../../common/Mage"
+import CharacterMovement from "../domain/logic/movements/CharacterMovements"
+import Directions from "../domain/logic/movements/Direction"
 
 describe("CharacterMovement", () => {
     const mockCharacter = new Mage()
