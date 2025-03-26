@@ -1,5 +1,6 @@
 import type ClassAbstract from "./logic/characters/ClassAbstract"
 import Mage from "./logic/characters/Mage"
+import Rogue from "./logic/characters/Rogue"
 import Warrior from "./logic/characters/Warrior"
 
 class Characters {
@@ -7,7 +8,7 @@ class Characters {
 
     public constructor() {
         this.Characters.push(new Mage())
-        this.Characters.push(new Warrior())
+        this.Characters.push(new Rogue())
         this.Characters.push(new Warrior())
     }
 

@@ -13,6 +13,7 @@ import type { CharacterClass } from "@prisma/client"
 
 class Warrior extends ClassAbstract {
     public characterType: CharacterClass = "WARRIOR"
+    public position = { x: 0, y: 0 }
 
     public health: CharacterHealth
     public manaPoints: CharacterManaPoints
