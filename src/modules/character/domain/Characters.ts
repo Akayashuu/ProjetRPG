@@ -1,5 +1,5 @@
 import type ClassAbstract from "./logic/characters/ClassAbstract"
-import Mage from "./logic/characters/Mage"
+import Mage from "../../../common/Mage"
 import Rogue from "./logic/characters/Rogue"
 import Warrior from "./logic/characters/Warrior"
 

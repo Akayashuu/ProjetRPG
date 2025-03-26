@@ -10,6 +10,7 @@ import { CharacterLuck } from "../stats/CharacterLuck"
 import { CharacterEndurance } from "../stats/CharacterEndurance"
 import { CharacterSpirit } from "../stats/CharacterSpirit"
 import type { CharacterClass } from "@prisma/client"
+import CharacterMovement from "../movements/CharacterMovements"
 
 class Warrior extends ClassAbstract {
     public characterType: CharacterClass = "WARRIOR"
@@ -25,6 +26,7 @@ class Warrior extends ClassAbstract {
     public luck: CharacterLuck
     public endurance: CharacterEndurance
     public spirit: CharacterSpirit
+    public movements: CharacterMovement
 
     public constructor() {
         super()
@@ -38,6 +40,7 @@ class Warrior extends ClassAbstract {
         this.luck = new CharacterLuck(5)
         this.endurance = new CharacterEndurance(10)
         this.spirit = new CharacterSpirit(4)
+        this.movements = new CharacterMovement(this)
     }
 }
 
